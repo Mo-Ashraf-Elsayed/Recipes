@@ -1,0 +1,19 @@
+<div class="InnerCard group">
+    <div
+        class="photo w-5/7 m-auto rounded-full overflow-hidden -mt-15 shadow-2xl group-hover:rotate-[360deg] transition-all duration-500">
+        <img [src]="meal.strMealThumb" alt>
+    </div>
+
+    <h2 class="text-2xl font-bold mt-8 mb-3">{{
+        meal.strMeal.split(" ",2).join(" ")
+        }}</h2>
+    @if(meal.strArea){
+    <p class="text-green-600">
+        <i class="fa-solid fa-earth-americas"></i>
+        <span> {{meal.strArea}}</span>
+    </p>
+    }
+    <button
+        class="bg-green-500 text-white p-3 rounded-3xl font-bold mt-3 hover:bg-green-600 transition-colors duration-300 cursor-pointer">View
+        Recipe</button>
+</div>

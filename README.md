@@ -1,59 +1,78 @@
-# FlavorVista
+# Recipe - Display Meals Through Categories
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+## Overview
 
-## Development server
+Recipe is an Angular project that allows users to explore meals based on categories. The categories are dynamically fetched from TheMealDB API and displayed in the navbar. Users can navigate through different categories to see meals related to their selection. The project also includes a persistent sidebar for easy navigation.
 
-To start a local development server, run:
+## Features
 
-```bash
-ng serve
-```
+- **Dynamic Navbar**: Categories are fetched from TheMealDB API and displayed as links.
+- **Sidebar Navigation**: The sidebar is always visible (as part of the `AppComponent`) and there is on it a **Meals** link to navigate back to categories Navbar.
+- **Meal Display**: Clicking on a category in the navbar loads meals related to that category.
+- **Routing & Not Found Page**: If a user enters an incorrect URL, a "Not Found" component is displayed.
+- **API Integration**: Uses TheMealDB API to fetch both meal categories and meals within a selected category.
+- **Tailwind CSS & Flowbite**: The project is styled using Tailwind CSS and Flowbite to ensure a modern and responsive UI.
+- **Footer**: Includes the app's logo and a link to the developer's LinkedIn profile and it is always visible (as part of the `AppComponent`).
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## How It Works
 
-## Code scaffolding
+1. **Sidebar Navigation**:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+   - The sidebar contains a "Meals" link that allows users to navigate back to the categories.
+   - The sidebar is part of `AppComponent`, meaning it remains visible on all pages.
 
-```bash
-ng generate component component-name
-```
+2. **Navbar Categories**:
+   - The categories are dynamically retrieved from TheMealDB API.
+   - Clicking on a category link updates the displayed meals accordingly.
+3. **Meal Display**:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   - When a category is selected, a request is sent to TheMealDB API with the category as a query parameter.
+   - The response contains meals belonging to that category, which are then displayed.
 
-```bash
-ng generate --help
-```
+4. **Handling Invalid URLs**:
+   - If a user enters a wrong URL, a "Not Found" component is displayed.
+   - The "Meals" link in the sidebar allows the user to return to the available categories.
 
-## Building
+## API Usage
 
-To build the project run:
+All API requests are made using TheMealDB:
 
-```bash
-ng build
-```
+- **Fetch Categories:** `https://www.themealdb.com/api/json/v1/1/categories.php`
+- **Fetch Meals by Category:** `https://www.themealdb.com/api/json/v1/1/filter.php?c={CATEGORY_NAME}`
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Installation & Setup
 
-## Running unit tests
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Mo-Ashraf-Elsayed/Recipes.git
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Technologies Used
 
-```bash
-ng test
-```
+- Angular 19
+- TypeScript
+- Tailwind CSS
+- Flowbite
+- HTML/SCSS
+- TheMealDB API
 
-## Running end-to-end tests
+## Future Enhancements
 
-For end-to-end (e2e) testing, run:
+- Add search functionality to find meals by name.
+- Improve UI design with better styling.
+- Implement a favorites feature to save favorite meals.
+- Display meal details on click on it
 
-```bash
-ng e2e
-```
+This project is open-source and free to use under the MIT License.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+Feel free to modify this file as your project evolves!
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### [Live Demo](https://recipes-iota-dun.vercel.app/)
+
+### [LinkedIn](https://www.linkedin.com/in/mohammed-ashraf0/)

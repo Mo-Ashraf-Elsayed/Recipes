@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@source "../node_modules/flowbite";
+
+@theme {
+  --color-main: #f4f2ee;
+  --font-heading: "Pacifico", serif;
+  --font-site: "Dekko", serif;
+  --spacing-bodyWidth: calc(100% - 256px);
+}
+body {
+  font-family: cursive;
+}
+$mainColor: #f4f2ee;
+$bodyWidth: calc(100% - 256px);
+.activeNavLink {
+  background-color: black;
+  color: white;
+}
